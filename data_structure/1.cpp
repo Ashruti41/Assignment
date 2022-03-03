@@ -1,6 +1,7 @@
 #include<iostream>
 
 using namespace std;
+//utility function to print contentes of an array
 
 void printArray(int arr[],int n)
 {
@@ -10,15 +11,24 @@ void printArray(int arr[],int n)
     }
     cout<<"\n";
 }
+//in place merge two sorted arrays X[] and Y[]
+//invariant: X[] and Y[] are sorted at any point
 
 void merge(int X[],int Y[],int m,int n)
 {
+    //consider each element X[i] of array X and ignore the element
+    //if it is already in correct order else swap it with next smaller
+    //element which happens to be first element of Y
     for(int i=0; i<m; i++)
     {
+        //compare current element of X[] with first element of Y[]
         if(X[i]>Y[0])
         {
             swap(X[i],Y[0]);
             int first = Y[0];
+            //move Y[0] to it correct position to maintain sorted
+            //order of Y[].
+            
             int k;
             for(k=1; k<n && Y[k]<first; k++)
             {
