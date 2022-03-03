@@ -103,7 +103,7 @@ int main(){
                 printf("The library is empty.\n\n");
             }
             else{
-                fflush(stdin);
+               // fflush(stdin);
                 printf("Enter the book author to list: ");
                 scanf("%s",authorT);
                 index = -1;
@@ -165,7 +165,7 @@ int main(){
                 sortBooksInOrderAccessionNumber(mylibrary,totalBooks);
                 printf("\n\n%-20s%-20s%-20s%-20s%-20s\n", "Accession Number","Book title","Book Aurthor","Book Price","Book is issued");
                 for(i=0; i<totalBooks; i++){
-                        printf("%-20d%-20s%-20s%-20d%-20d\n\n",mylibrary[index].an,mylibrary[index].title,mylibrary[index].author,mylibrary[index].price,mylibrary[index].bookis);
+                        printf("%-20d%-20s%-20s%-20d%-20d\n\n",mylibrary[i].an,mylibrary[i].title,mylibrary[i].author,mylibrary[i].price,mylibrary[i].bookis);
                 }
             }
        }
